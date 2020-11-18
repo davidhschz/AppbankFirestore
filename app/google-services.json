@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "49985729492",
+    "firebase_url": "https://appbank-b50de.firebaseio.com",
+    "project_id": "appbank-b50de",
+    "storage_bucket": "appbank-b50de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49985729492:android:3f21173cd530f576709c41",
+        "android_client_info": {
+          "package_name": "com.example.appbankfirestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49985729492-9qc1i8k2l7v1nnu42dj1v51ronuouup2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG7j8IV58x5kSkyQ4wdrGtEjkEm-YGLEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49985729492-9qc1i8k2l7v1nnu42dj1v51ronuouup2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

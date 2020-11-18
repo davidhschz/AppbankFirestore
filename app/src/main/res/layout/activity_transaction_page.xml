@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransactionPage"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvbalance"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/btnlogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"
+            android:layout_marginLeft="45dp">
+
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvhour"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvtargetAccountEvent"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Número de cuenta destino:"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/ettargetaccount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Ej. 05 1234567892"
+            android:inputType="number">
+
+        </EditText>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/verifyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verificar cuenta"
+        android:layout_gravity="center">
+
+    </Button>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Valor a transferir"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/etamount"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Ej. 200000">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btntransfer"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:text="Transferir">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_marginLeft="12dp">
+
+        </Button>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnlisttransactions"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar Movimientos"
+        android:layout_gravity="center">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/currentuserbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/useraccountnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="2"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/targetbalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="3"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/targetaccountnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="4"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/itemtarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:visibility="invisible">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="6">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/itemuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="7">
+
+    </TextView>
+
+</LinearLayout>
