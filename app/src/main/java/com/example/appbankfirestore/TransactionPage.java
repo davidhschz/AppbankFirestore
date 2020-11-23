@@ -21,6 +21,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -64,7 +66,14 @@ public class TransactionPage extends AppCompatActivity {
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
         hour.setText(dateFormat.format(date));
         searchAccount();
-        System.out.println(itemUser.getText().toString());
+
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +120,10 @@ public class TransactionPage extends AppCompatActivity {
         });
     }
 
+    private void pruebaxd() {
+        Toast.makeText(this, targetUser.getBalance().toString(), Toast.LENGTH_SHORT).show();
+    }
+
     private void updateTransactionTarget(String updatedBalancedTargetParsed) {
         Map<String, Object> updateAccount = new HashMap<>();
         updateAccount.put("balance", updatedBalancedTargetParsed);
@@ -153,11 +166,11 @@ public class TransactionPage extends AppCompatActivity {
         int updatedBalance = 0;
         String item;
         int i;
-        for ( i = 0; i >= 1; i++){
-            Toast.makeText(this, "llego1", Toast.LENGTH_SHORT).show();
+        boolean sw = true;
+        for ( i = 0; i <= 1; i++){
             if (i == 0){
                 updatedBalance =  updatedBalanceOrigin;
-                item = itemUser;
+                item = itemUser.getText().toString();
                 Toast.makeText(this, "llegó2", Toast.LENGTH_SHORT).show();
             } else {
                 updatedBalance =  updatedBalanceTarget;
@@ -185,9 +198,15 @@ public class TransactionPage extends AppCompatActivity {
 
 
     private void insertTransaction(String accountNumberOrigin, String accountNumberTarget) {
+        Calendar c = Calendar.getInstance();
+        System.out.println("Current time => "+c.getTime());
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = df.format(c.getTime());
+
         Map<String, Object> transactionData = new HashMap<>();
         transactionData.put("amount", amount.getText().toString());
-        transactionData.put("date", "11/15/2020");
+        transactionData.put("date", formattedDate);
         transactionData.put("origin_account_number", accountNumberOrigin);
         transactionData.put("target_account_number", accountNumberTarget);
         transactionData.put("transaction_number", "1");
@@ -206,6 +225,7 @@ public class TransactionPage extends AppCompatActivity {
                         
                     }
                 });
+
     }
 
     private boolean searchTargetAccount() {
@@ -222,6 +242,7 @@ public class TransactionPage extends AppCompatActivity {
                                     targetUser.setBalance(document.getString("balance"));
                                     itemtarget.setText(document.getId());
                                 }
+                                pruebaxd();
                                 targetaccountnumber.setText(targetUser.getAccountNumber());
                                 targetbalance.setText(targetUser.getBalance());
                                 if (!currentUser.getAccountNumber().equals(targetUser.getAccountNumber())){
